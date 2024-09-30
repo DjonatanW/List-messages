@@ -7,6 +7,7 @@ const app = express()
 app.use(express.json())
 
 const users = []
+const massage = []
 
 app.get('/',(request, response) => {
   return response.status(200).json({
@@ -106,10 +107,26 @@ app.post('/login', async (request, response) =>{
   }
 })
 
+app.post('/massage', async (request, response) =>{
 
+  const {title, description} = request.body
+
+  const newMassage = {
+    id: uuidv4(),
+    title,
+    description
+  }
+
+  massage.push(newMassage)
+
+  return response.status(201).json({
+    message: `Mensagem criada com sucesso! ${newMassage.description}`
+
+  })
+
+})
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
 })
-
 

@@ -64,7 +64,47 @@ app.post('/signup', async (request, response) => {
   }
 })
 
+app.post('/login', async (request, response) =>{
+  try {
+    const {email, password} = request.body
 
+    if (!email) {
+      return response.status(400).json({
+        message: 'Insira um e-mail válido' 
+      })
+    }
+
+    if (!password) {
+      return response.status(400).json({
+        message: 'Insira uma senha válida' 
+      })
+    }
+    const user = users.find(user => user.email === email)
+
+    if (!user) {
+      return response.status(404).json({
+        message: 'Email não encontrado no sistema, verifique ou crie uma conta'
+      })
+    }
+
+    const isMath = await bcrypt.compare(password, user.password)
+
+    if (!isMath) {
+      return response.status(400).json({
+        message: 'Credenciais inválidas'
+      })
+    }
+
+    return response.status(200).json({
+      message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`
+    })
+
+  } catch(error) {
+    response.status(500).json({
+      message: `Erro ao registrar Usuário. ${error}`
+    })
+  }
+})
 
 
 

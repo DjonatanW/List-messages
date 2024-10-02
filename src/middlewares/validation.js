@@ -48,13 +48,13 @@ export function validateMassageCreate(request, response, next) {
 
   if (!title) {
     return response.status(400).json({
-      message: 'Insira um e-mail válido' 
+      message: 'Insira um título válido' 
     })
   }
 
   if (!description) {
     return response.status(400).json({
-      message: 'Insira uma senha válida' 
+      message: 'Insira uma descrição válida' 
     })
   }
 

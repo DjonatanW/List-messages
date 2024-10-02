@@ -49,10 +49,10 @@ router.get('/email', (request, response) => {
     })
   }
 
-  const filterMassages = massages.filter(massage => massage.email === email)
+  const massages = massages.filter(massage => massage.email === email)
 
   return response.status(200).json({
-    message: ` Seja bem-vindo!` , filterMassages
+    message: ` Seja bem-vindo!` , massages
   })
 
 })

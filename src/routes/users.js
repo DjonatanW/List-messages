@@ -79,5 +79,4 @@ router.post('/login', validateUserLogin, async (request, response) => {
 // Exportação deafault
 export default router
 
-// localhost:3000/users/signup
 

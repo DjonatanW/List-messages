@@ -3,7 +3,7 @@ import cors from 'cors'
 
 import welcomeRouter from './routes/welcome.js'
 import usersRouter from './routes/users'
-import massagesRouter from './routes/massages'
+import messagesRouter from './routes/messages'
 
 const app = express()
 
@@ -14,7 +14,7 @@ app.use(cors())
 
 app.use('/', welcomeRouter)
 app.use('/users', usersRouter)
-app.use('/massages', massagesRouter)
+app.use('/messages', messagesRouter)
 
 
 app.listen(PORT, () => {

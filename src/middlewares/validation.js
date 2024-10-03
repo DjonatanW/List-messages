@@ -43,7 +43,7 @@ export function validateUserLogin(request, response, next) {
   
 }
 
-export function validateMassageCreate(request, response, next) {
+export function validateMessageCreate(request, response, next) {
   const { title, description } = request.body
 
   if (!title) {

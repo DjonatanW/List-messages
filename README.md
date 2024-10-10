@@ -133,17 +133,20 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 ## Como Executar
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/DjonatanW/List-messages.git
+  ```bash
+    git clone https://github.com/DjonatanW/List-messages.git
   ```
+
 2. Navegue até o diretório do projeto:
   ```bash
   cd List-messages
   ```
+
 3.Instale as dependências:
   ```bash
     npm install
   ```
+
 4.Inicie o servidor em modo de desenvolvimento:
   ```bash
     npm run dev

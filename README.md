@@ -139,7 +139,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 2. Navegue até o diretório do projeto:
   ```bash
-  cd List-messages
+    cd List-messages
   ```
 
 3.Instale as dependências:

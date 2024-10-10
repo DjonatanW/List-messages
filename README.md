@@ -7,8 +7,8 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 ## Sumário
 
 - [Funcionalidades-API](#funcionalidades)
-  - [Usuários](#usuários)
-    - [Cadastro de Usuário](#cadastro-de-usuário)
+  - [Rotas de Usuários](#usuários)
+    - [Cadastro de Usuário (Sign Up)](#cadastro-de-usuário)
     - [Login de Usuário](#login-de-usuário)
   - [Mensagens](#mensagens)
     - [Criação do Recado](#criação-mensagem)

@@ -80,7 +80,8 @@ router.put('/:id', validateMessageCreate, (request, response) => {
   message.description = description
 
   return response.status(200).json({
-    message: 'Mensagem atualizada com sucesso!', message
+    message: 'Mensagem atualizada com sucesso!',
+    message: message
   })
 })
 

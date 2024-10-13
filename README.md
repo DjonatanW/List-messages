@@ -26,7 +26,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 ### Rotas de Usuários
 
-#### Cadastro de Usuário (Sign Up)
+#### Cadastro de Usuário (Sign Up) {#cadastro-de-usuário-sign-up}
 
 - **Rota**: `POST /api/users/signup`
 - **Descrição**: Permite que novos usuários se cadastrem na aplicação.

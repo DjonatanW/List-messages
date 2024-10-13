@@ -10,11 +10,11 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
   - [Rotas de Usuários](#rotas-de-usuários)
     - [Cadastro de Usuário (Sign Up)](#cadastro-de-usuário-sign-up)
     - [Login de Usuário](#login-de-usuário)
-  - [Mensagens](#mensagens)
-    - [Criação do Recado](#criação-mensagem)
-    - [Atualização do Recado](#atualização-mensagem)
-    - [Deletar o Recado](#deletar-mensagem)
-    - [Consulta de Recados](#leitura-mensagens)
+  - [Rotas de recados](#rotas-de-recados)
+    - [Criação do Recado](#criação-do-recado)
+    - [Atualização do Recado](#atualização-do-recado)
+    - [Deletar o Recado](#deletar-o-recado)
+    - [Consulta de Recados](#consulta-de-recados)
 
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 
@@ -26,7 +26,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 ### Rotas de Usuários
 
-#### Cadastro de Usuário (Sign Up) {#cadastro-de-usuário-sign-up}
+#### Cadastro de Usuário (Sign Up)
 
 - **Rota**: `POST /api/users/signup`
 - **Descrição**: Permite que novos usuários se cadastrem na aplicação.

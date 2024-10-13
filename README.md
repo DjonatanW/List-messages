@@ -26,6 +26,9 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 ### Rotas de Usuários
 
+- link de toda a documentação das rotas
+  https://documenter.getpostman.com/view/38729660/2sAXxS8XTN
+
 #### Cadastro de Usuário (Sign Up)
 
 - **Rota**: `POST /api/users/signup`

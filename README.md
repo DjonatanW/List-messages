@@ -31,7 +31,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Cadastro de Usuário (Sign Up)
 
-- **Rota**: `POST /api/users/signup`
+- **Rota**: `POST /users/signup`
 - **Descrição**: Permite que novos usuários se cadastrem na aplicação.
 - **Parâmetros da Requisição**:
   - `name` (string): Nome do usuário.
@@ -47,7 +47,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Login de Usuário
 
-- **Rota**: `POST /api/users/login`
+- **Rota**: `POST /users/login`
 - **Descrição**: Autentica os usuários cadastrados, permitindo que eles acessem suas mensagens e outras funcionalidades da aplicação.
   
 - **Parâmetros da Requisição**:
@@ -65,7 +65,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Criação do Recado
 
-- **Rota**: `POST /api/notes`
+- **Rota**: `POST /messages/message`
 - **Descrição**: Cria novos recados com um título e descrição, vinculando-os ao usuário autenticado.
   
 - **Parâmetros da Requisição**:
@@ -81,7 +81,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Atualização do Recado
 
-- **Rota**: `PUT /api/notes/:id`
+- **Rota**: `PUT /messages/:id`
 - **Descrição**: Atualiza o título e a descrição de um recado específico, identificado pelo seu ID.
   
 - **Parâmetros da Requisição**:
@@ -98,7 +98,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Deletar o Recado
 
-- **Rota**: `DELETE /api/notes/:id`
+- **Rota**: `DELETE /messages/:id`
 - **Descrição**: Remove um recado específico, identificado pelo seu ID.
 
 - **Parâmetros da Requisição**:
@@ -110,7 +110,7 @@ Essa aplicação foi construída utilizando `Node.js` e `Express.js`. A aplicaç
 
 #### Consulta de Recados
 
-- **Rota**: `GET /api/notes`
+- **Rota**: `GET /messages/:email`
 - **Descrição**: Consulta todos os recados cadastrados pelo usuário autenticado.
 
 - **Parâmetros da Requisição**:

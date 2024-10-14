@@ -68,20 +68,20 @@ router.put('/:id', validateMessageCreate, (request, response) => {
   const { id } = request.params
   const { title, description } = request.body
   
-  const message = messages.find(message => message.id === id)
+  const messageUpdate = messages.find(message => message.id === id)
 
-  if (!message) {
+  if (!messageUpdate) {
     return response.status(404).json({
-      message: 'Por favor, informe um id válido da mensagem.'
+      messageUpdate: 'Por favor, informe um id válido da mensagem.'
     })
   }
 
-  message.title = title
-  message.description = description
+  messageUpdate.title = title
+  messageUpdate.description = description
 
   return response.status(200).json({
     message: 'Mensagem atualizada com sucesso!',
-    message: message
+    messageUpdate
   })
 })
 

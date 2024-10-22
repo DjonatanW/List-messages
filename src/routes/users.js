@@ -36,7 +36,8 @@ router.post('/signup', validateUserRegistration, async (request, response) => {
   
     
     response.status(201).json({
-      message: `Seja bem vindo ${newUser.name}! Pessoa usuária registrada com sucesso!`
+      message: `Seja bem vindo ${newUser.name}! Pessoa usuária registrada com sucesso! 
+                id : ${newUser.id}`
     })
   } catch(error) {
     response.status(500).json({

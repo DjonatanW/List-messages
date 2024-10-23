@@ -67,7 +67,8 @@ router.post('/login', validateUserLogin, async (request, response) => {
     }
 
     return response.status(200).json({
-      message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`
+      message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`,
+      user
     })
 
   } catch(error) {

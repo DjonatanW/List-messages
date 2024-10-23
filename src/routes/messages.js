@@ -63,6 +63,40 @@ router.get('/:email', (request, response) => {
 
 })
 
+router.get('/get/:email', (request, response) => {
+  const { email } = request.params
+
+  const { page, perPage } = request.query
+
+  const user = users.find(user => user.email === email)
+
+  if (!user) {
+    return response.status(404).json({
+      message: 'Usuário não encontrado'
+    })
+  }
+
+  const currentPage = parseInt(page) || 1
+  const itemsPerPage = parseInt(perPage) || 10
+
+  const userNotes = messages.filter(message => message.email === email)
+
+  const totalItems = userNotes.length
+
+  const startIndex = (currentPage -1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+
+  const paginatedNotes = userNotes.slice(startIndex, endIndex)
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage)
+
+  response.status(200).json({
+    message:paginatedNotes,
+    totalPages,
+    currentPage
+  })
+
+})
 
 router.put('/:id', validateMessageCreate, (request, response) => {
   const { id } = request.params

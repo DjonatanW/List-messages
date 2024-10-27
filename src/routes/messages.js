@@ -63,25 +63,59 @@ router.get('/:email', (request, response) => {
 
 })
 
+router.get('/get/:email', (request, response) => {
+  const { email } = request.params
+
+  const { page, perPage } = request.query
+
+  const user = users.find(user => user.email === email)
+
+  if (!user) {
+    return response.status(404).json({
+      message: 'Usuário não encontrado'
+    })
+  }
+
+  const currentPage = parseInt(page) || 1
+  const itemsPerPage = parseInt(perPage) || 10
+
+  const userNotes = messages.filter(message => message.email === email)
+
+  const totalItems = userNotes.length
+
+  const startIndex = (currentPage -1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+
+  const paginatedNotes = userNotes.slice(startIndex, endIndex)
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage)
+
+  response.status(200).json({
+    message:paginatedNotes,
+    totalPages,
+    currentPage
+  })
+
+})
 
 router.put('/:id', validateMessageCreate, (request, response) => {
   const { id } = request.params
   const { title, description } = request.body
   
-  const message = messages.find(message => message.id === id)
+  const messageUpdate = messages.find(message => message.id === id)
 
-  if (!message) {
+  if (!messageUpdate) {
     return response.status(404).json({
-      message: 'Por favor, informe um id válido da mensagem.'
+      messageUpdate: 'Por favor, informe um id válido da mensagem.'
     })
   }
 
-  message.title = title
-  message.description = description
+  messageUpdate.title = title
+  messageUpdate.description = description
 
   return response.status(200).json({
     message: 'Mensagem atualizada com sucesso!',
-    message: message
+    messageUpdate
   })
 })
 
@@ -102,6 +136,20 @@ router.delete('/:id', (request, response) => {
   return response.status(200).json({
     message: 'Mensagem apagada com sucesso'
     })
+})
+
+router.get('/details/:id', (request, response) => {
+  const { id } = request.params
+
+  const note = messages.find(note => note.id === id)
+
+  if (!note) {
+    return response.status(404).json({
+      message: 'Recado não encontrado.'
+    })
+  }
+
+  response.status(200).json(note)
 })
 
 export default router

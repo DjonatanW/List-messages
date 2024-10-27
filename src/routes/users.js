@@ -36,7 +36,8 @@ router.post('/signup', validateUserRegistration, async (request, response) => {
   
     
     response.status(201).json({
-      message: `Seja bem vindo ${newUser.name}! Pessoa usuária registrada com sucesso!`
+      message: `Seja bem vindo ${newUser.name}! Pessoa usuária registrada com sucesso! 
+                id : ${newUser.id}`
     })
   } catch(error) {
     response.status(500).json({
@@ -66,7 +67,8 @@ router.post('/login', validateUserLogin, async (request, response) => {
     }
 
     return response.status(200).json({
-      message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`
+      message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`,
+      user
     })
 
   } catch(error) {
